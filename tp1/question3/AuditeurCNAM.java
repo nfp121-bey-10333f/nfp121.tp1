@@ -1,3 +1,6 @@
+
+
+
 package question3;
 
 import java.text.Normalizer;
@@ -47,10 +50,14 @@ public class AuditeurCNAM {
      *         homonymes...
      */
     public String login() {
+        if(this.nom == null || this.prenom == null)
+            return null;
+            
+            
         String lettresnom;
         String lettresprenom = this.prenom.substring(0,1);
         String login;
-    
+            
         if (this.nom.length() >= 6) 
         {
             lettresnom = this.nom.substring(0,6);

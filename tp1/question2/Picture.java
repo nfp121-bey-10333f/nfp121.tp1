@@ -20,7 +20,8 @@ public class Picture {
     private Square window;
     private Triangle roof;
     private Circle sun;
-    private int yPosition;
+    private Circle sun2;
+    public boolean terrefixe=true;
 
     /**
      * Constructor for objects of class Picture
@@ -56,6 +57,15 @@ public class Picture {
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        
+        sun2 = new Circle();
+        sun2.changeColor("yellow");
+        sun2.moveHorizontal(100);
+        sun2.moveVertical(-10);
+        sun2.changeSize(60);
+        sun2.makeVisible();
+        
+        sunset(sun2);
     }
 
     /**
@@ -87,16 +97,9 @@ public class Picture {
         /**
      * Slowly move the circle vertically by 'distance' pixels.
      */
-    public void slowMoveVertical(int distance) {
-        int delta;
-
-        if (distance < 0) {
-            delta = -1;
-            distance = -distance;
-        } else {
-            delta = 1;
+    public void sunset(Circle c) {
+        if (terrefixe) {
+            sun.slowMoveVertical(100);
         }
-        
-        sun.moveVertical(distance);
     }
 }
